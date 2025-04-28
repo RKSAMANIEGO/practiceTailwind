@@ -51,7 +51,7 @@ const HeaderProducts = () => {
                             <section className='group w-72 h-1/6 border border-gray-200 rounded-2xl  overflow-hidden hover:shadow-lg hover:shadow-pink-400' key={prod.id}>
                                 <div className='overflow-hidden'>
                                     {/** <img className='w-72 h-60  rounded-t-2xl object-cover transition-all duration-300 ease-in-out  overflow-hidden cursor-pointer group-hover:scale-105' src={prod.image}/>*/} 
-                                    <Image height={300}  width={300} src={prod.image} onClick={() => showModal(prod.image)} className='w-72 h-60  rounded-t-2xl object-cover transition-all duration-300 ease-in-out  overflow-hidden cursor-pointer group-hover:scale-105' src={prod.image}/>
+                                    <Image height={300}  width={300} src={prod.image} onClick={() => showModal(prod.image)} className='w-72 h-60  rounded-t-2xl object-cover transition-all duration-300 ease-in-out  overflow-hidden cursor-pointer group-hover:scale-105'/>
                                 </div>
                             <div className='flex flex-col px-5 py-4'>
                                 <h3 className='font-bold group-hover:text-pink-600'>{prod.name.toUpperCase()}</h3>

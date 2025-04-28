@@ -3,9 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://rksamaniego.github.io/practiceTailwind/",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "node ./node_modules/gh-pages/bin/gh-pages.js -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
