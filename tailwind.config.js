@@ -5,6 +5,7 @@ export default {
 		extend: {
 			height: {
 				400: "35rem",
+				260: "272px",
 			},
 			fontSize: {
 				12: "11px",

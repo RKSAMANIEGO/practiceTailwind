@@ -21,7 +21,7 @@ const NavBar = () => {
     }
 
     return (         
-        <nav className="flex items-center justify-between p-5 sm:px-10 bg-pink-400 text-white font-bold h-16 fixed right-0 left-0  top-0 z-10   ">
+        <nav className="flex items-center justify-between p-5 sm:px-10 bg-pink-500 text-white font-bold h-16 fixed right-0 left-0  top-0 z-10   ">
             <div className='w-12 h-12'><img src={logo} alt='logo' className='w-full h-12 rounded-full '/></div> 
 
             <ul className='hidden  sm:flex sm:items-center sm:justify-between w-6/12 py-4 m-5'>
@@ -40,10 +40,11 @@ const NavBar = () => {
                 <span className="hidden peer-checked:inline">&#215;</span>
             </label>
 
-            <div className="hidden peer-checked:flex flex-col items-center justify-center z-40 gap-10 w-full h-full bg-pink-500 p-4 fixed top-0 left-0 sm:hidden">
-                <a href="#" className="py-2">Inicio</a>
-                <a href="#" className="py-2">Servicios</a>
-                <a href="#" className="py-2">Contacto</a>
+            <div className="hidden peer-checked:flex flex-col items-center justify-center z-40 gap-10 w-full h-svh bg-pink-500 p-4 fixed top-0 left-0 sm:hidden">
+                <p onClick={() => handlerRedirect("home")}> <a href="#home" className="py-2">Inicio</a></p>
+                <p onClick={()=> handlerRedirect("service")}> <a href="#service" className="py-2">Servicios</a></p>
+                <Link to="/products"><a href="#" className="py-2">Productos</a></Link>
+                <p onClick={()=>handlerRedirect("contacts")}><a href="#contacto" className="py-2">Contacto</a></p>
             </div>
         </nav>   
         
