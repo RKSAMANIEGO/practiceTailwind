@@ -13,7 +13,7 @@ function App() {
   return (  
   <AuthProvider>
 
-    <Router>
+    <Router basename="/practiceTailwind">
       <TopPage/>
       <Routes>
           <Route path="/login" element={<Login/>}/>
