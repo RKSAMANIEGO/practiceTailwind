@@ -25,7 +25,7 @@ const HeaderProducts = () => {
             Me gustaría solicitar  lo sgte:
             • 1  ${producto.name}  - S/${producto.price} soles
             
-            Total: S/${producto.price} soles`
+            Total: S/${producto.price-(producto.price*(producto.discount/100))} soles`
         )}`;
 
         window.open( url,"_blank");
@@ -61,10 +61,21 @@ const HeaderProducts = () => {
                             {cat.products.map(prod => (
                                     
                             <section className='group w-36 h-260   sm:w-72 sm:h-1/6 border border-gray-200 rounded-2xl  overflow-hidden hover:shadow-lg hover:shadow-pink-400' key={prod.id}>
-                                <div className='overflow-hidden'>
+                                
+                                {prod.image.includes("promocion") ?
+                                <div className='overflow-hidden relative'>
+                                    {/** <img className='w-72 h-60  rounded-t-2xl object-cover transition-all duration-300 ease-in-out  overflow-hidden cursor-pointer group-hover:scale-105' src={prod.image}/>*/} 
+                                    <Image height={widthPage < 640 ? 120 : 300 }  width={widthPage < 640 ? 150 :300} src={prod.image} onClick={() => showModal(prod.image)} className='w-40 h-40 sm:w-72 sm:h-60  rounded-t-2xl object-cover transition-all duration-300 ease-in-out  overflow-hidden cursor-pointer group-hover:scale-105'/>
+                                    <p className='text-12 sm:text-xs  w-1/2  sm:w-1/3  p-1 sm:p-2 absolute  bottom-0 sm:top-2 sm:bottom-64 bg-red-600 text-white text-center'>OFERTA</p>
+                                </div>
+
+                                :
+                                <div className='overflow-hidden relative'>
                                     {/** <img className='w-72 h-60  rounded-t-2xl object-cover transition-all duration-300 ease-in-out  overflow-hidden cursor-pointer group-hover:scale-105' src={prod.image}/>*/} 
                                     <Image height={widthPage < 640 ? 120 : 300 }  width={widthPage < 640 ? 150 :300} src={prod.image} onClick={() => showModal(prod.image)} className='w-40 h-40 sm:w-72 sm:h-60  rounded-t-2xl object-cover transition-all duration-300 ease-in-out  overflow-hidden cursor-pointer group-hover:scale-105'/>
                                 </div>
+                                }
+
                                 <div className='flex flex-col  px-2 sm:px-5  py-2 sm:py-4'>
                                     <h3 className='text-12 sm:text-lg font-bold group-hover:text-pink-600'>{prod.name.toUpperCase()}</h3>
                                     <p className='text-10 sm:ext-xs'>{prod.description}</p>
