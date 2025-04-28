@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found</title>
     <script type="text/javascript">
-      // Evita la redirección si ya estamos en la raíz o en el index
-      if (window.location.pathname !== "/" && !window.location.pathname.includes("index.html")) {
-        window.location.replace(window.location.pathname + window.location.search);
-      }
+      // Redirigir siempre a la raíz (index.html) cuando haya un 404
+      window.location.replace(window.location.origin + "/");
     </script>
   </head>
   <body>
